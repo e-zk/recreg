@@ -9,10 +9,14 @@ recreg
 usage
 -----
 	rr [geometry] [file]
+
 where:
+
 	geometry    region to record in X11 geometry format:
 	            WIDTHxHEIGHT+XPOS+YPOS
 	file        output file
+
 example:
-	rr 260x320+0+760
+
+	rr 260x320+0+760 bottom_right_corner.mkv
 
