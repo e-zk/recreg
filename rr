@@ -26,13 +26,11 @@ if [ $# -ne 2 ]; then
 fi
 
 # geometry format check
-if echo "$REG" | grep -Ex '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' > /dev/null; then
-	# nothing
-	printf ''
-else
+# can probably use something other than grep here (case?)
+echo "$REG" | grep -Ex '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' > /dev/null || {
 	usage
 	exit 1
-fi
+}
 
 # geometry parsing logic (yeah, it's ugly)
 W=${REG%%x*}
